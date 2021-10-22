@@ -1,0 +1,89 @@
+@import url('https://fonts.gstatic.com/s/rubik/v14/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-WYiFVUU1Z4Y.woff2');
+/* sets the background color of the body to bisque. 
+set font to rubik */
+body{
+    background-color: bisque;
+    font-family: 'rubik', sans-serif;
+    font-display: swap;
+    font-weight: 200px;
+}
+/* aligns the heading tex to the center. */
+h1{
+    text-align: center;
+}
+/* set the widht for the accordion. set the margin to 90px
+on the top and bottom and auto to the left and right */
+
+.accordion {
+    width: 800px ;
+    margin: 90px;
+    color:whitesmoke;
+    background-color: darkkhaki;
+    padding: 45px 45px;
+    align-items: center;
+}
+
+.accordion .container{
+    position: relative;
+    margin: 10px 10px;
+}
+
+/* position the labels relative to the .container. 
+adds padding to the top and bottom and increases font size.
+also makes its cursor a pointer */
+
+.accordion .label {
+    position: relative;
+    padding: 10px 0px;
+    font-size: 30px;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+/* position the plugs sign 5px from the right. 
+center it using the transfrom property. */
+
+.accordion .label::before{
+    content: '+';
+    color: black;
+    position: absolute;
+    top: 50px;
+    right: -5px;
+    font-size: 30px;
+    transform: translateY(-50%);
+}
+
+/* hides the content (height: 0), decreases font size, justifies text and adds transition */
+
+.accordion .content {
+    position: relative;
+    background:darkgray;
+    height: 0px;
+    font-size: 20px;
+    text-align: justify;
+    width: 780px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+/* adds a horizontal line between the contents */
+
+.accordion hr{
+    width: 100;
+    margin-left: 0;
+    border: 1px white;
+}
+
+
+/* Unhides the content part when active. Sets the height */
+
+.accordion .container.active .content {
+    height: 95px;
+  }
+  
+  /* Changes from plus sign to negative sign once active */
+  
+  .accordion .container.active .label::before {
+    content: '-';
+    font-size: 30px;
+  }
